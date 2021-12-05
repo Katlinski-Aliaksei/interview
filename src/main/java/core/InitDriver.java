@@ -1,4 +1,4 @@
-package Core;
+package core;
 
 import com.google.inject.Inject;
 import com.google.inject.Provides;

@@ -1,4 +1,4 @@
-package Core;
+package core;
 
 import Pages.BasePage;
 import Pages.LogInPage;
@@ -12,7 +12,7 @@ public class DemoStatusTest {
     Injector injector = Guice.createInjector(new TestingModule());
     BasePage basePage=injector.getInstance(BasePage.class);
     LogInPage logInPage=injector.getInstance(LogInPage.class);
-   // InitDriver initDriver = injector.getInstance(InitDriver.class);
+    InitDriver initDriver = injector.getInstance(InitDriver.class);
 
 //    @Inject
 //    ChromeDriver driver= initDriver.getDriver();

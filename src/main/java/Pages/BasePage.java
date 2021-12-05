@@ -19,7 +19,6 @@ public class BasePage{
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
         return new LogInPage(driver);
     }
 }
