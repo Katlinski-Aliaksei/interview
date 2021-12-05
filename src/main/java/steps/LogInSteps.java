@@ -1,6 +1,6 @@
 package steps;
 
-import Pages.LogInPage;
+import pages.LogInPage;
 
 
 public class LogInSteps {

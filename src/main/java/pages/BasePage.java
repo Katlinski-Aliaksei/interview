@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import com.google.inject.Inject;
 import org.openqa.selenium.chrome.ChromeDriver;

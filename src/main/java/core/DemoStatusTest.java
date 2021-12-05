@@ -1,7 +1,7 @@
 package core;
 
-import Pages.BasePage;
-import Pages.LogInPage;
+import pages.BasePage;
+import pages.LogInPage;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.testng.annotations.Test;

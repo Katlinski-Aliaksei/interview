@@ -1,6 +1,6 @@
 package steps;
 
-import Pages.InterviewPage;
+import pages.InterviewPage;
 import com.google.inject.Inject;
 
 
