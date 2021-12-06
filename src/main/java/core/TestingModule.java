@@ -1,10 +1,12 @@
 package core;
 
 import com.google.inject.AbstractModule;
+import org.openqa.selenium.WebDriver;
 
 public class TestingModule extends AbstractModule {
     @Override
     protected void configure() {
-        bind(WebDriverFactory.class).to(InitDriver.class);
+        WebDriverFactory webDriverFactory = GoogleDriverFactory.getInstance();
+        bind(WebDriver.class).toInstance(webDriverFactory.getDriver());
     }
 }

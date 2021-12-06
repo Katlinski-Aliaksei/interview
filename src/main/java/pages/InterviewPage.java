@@ -1,9 +1,12 @@
 package pages;
 
+import com.google.inject.Inject;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class InterviewPage {
+public class InterviewPage extends BasePage {
     @FindBy(xpath = "//div[contains(text(),\"Demo\")]")
     private WebElement demoButton;
     @FindBy(xpath = "//input[contains(@id,\"name\")]")
@@ -27,8 +30,14 @@ public class InterviewPage {
     @FindBy(xpath = "//div[@class=\"crfStatusAvailable\"]")
     private WebElement demoStatus;
 
+    @Inject
+    public InterviewPage(final WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+
     public InterviewPage startDemo() {
-        demoButton.click();
+        waitElementToBeClickableAndClick(demoButton);
 
         return this;
     }
@@ -46,13 +55,13 @@ public class InterviewPage {
     }
 
     public InterviewPage chooseGender() {
-        maleCheckbox.click();
+        waitElementToBeClickableAndClick(maleCheckbox);
 
         return this;
     }
 
     public InterviewPage chooseYesOrNo() {
-        yesCheckbox.click();
+        waitElementToBeClickableAndClick(yesCheckbox);
 
         return this;
     }
@@ -64,16 +73,21 @@ public class InterviewPage {
     }
 
     public InterviewPage openDropdownAndChoose() {
-        dropdownButton.click();
-        noInDropdown.click();
+        waitElementToBeClickableAndClick(dropdownButton);
+        waitElementToBeClickableAndClick(noInDropdown);
 
         return this;
     }
 
     public InterviewPage clickCancelButton() {
-        cancelButton.click();
+        waitElementToBeClickableAndClick(cancelButton);
 
         return this;
+    }
+
+    public void waitElementToBeClickableAndClick(WebElement element) {
+        waitForVisibility(element);
+        element.click();
     }
 
     public String getDemoStatus() {
